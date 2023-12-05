@@ -1,8 +1,8 @@
 package com.example.roomsiswa
 
 import android.app.Application
-import com.example.kotlin_repo.repositori.ContainerApp
-import com.example.kotlin_repo.repositori.ContainerDataApp
+import com.example.roomsiswa.repositori.ContainerApp
+import com.example.roomsiswa.repositori.ContainerDataApp
 
 class AplikasiSiswa : Application() {
 

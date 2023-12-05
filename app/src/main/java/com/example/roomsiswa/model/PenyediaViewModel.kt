@@ -5,18 +5,17 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.kotlin_repo.model.EntryViewModel
 import com.example.roomsiswa.AplikasiSiswa
 
 object PenyediaViewModel {
-val Factory = viewModelFactory {
-    initializer {
-        HomeViewModel(AplikasiSiswa().container.repositoriSiswa)
+    val Factory = viewModelFactory {
+        initializer {
+            HomeViewModel(aplikasiSiswa().container.repositoriSiswa)
+        }
+        initializer {
+            EntryViewModel(aplikasiSiswa().container.repositoriSiswa)
+        }
     }
-    initializer {
-        EntryViewModel(AplikasiSiswa().container.repositoriSiswa)
-    }
-}
 }
 
 fun CreationExtras.aplikasiSiswa(): AplikasiSiswa =

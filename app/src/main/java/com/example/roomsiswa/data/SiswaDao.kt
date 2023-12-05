@@ -1,9 +1,9 @@
-package com.example.kotlin_repo.data
+package com.example.roomsiswa.data
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
-import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
@@ -12,7 +12,6 @@ import kotlinx.coroutines.flow.Flow
 interface SiswaDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(siswa: Siswa)
-
 
     @Update
     suspend fun update(siswa: Siswa)
@@ -25,5 +24,4 @@ interface SiswaDao {
 
     @Query("SELECT * FROM tblSiswa ORDER BY nama ASC")
     fun getAllSiswa(): Flow<List<Siswa>>
-
 }

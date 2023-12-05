@@ -1,7 +1,7 @@
-package com.example.kotlin_repo.repositori
+package com.example.roomsiswa.repositori
 
-import com.example.kotlin_repo.data.Siswa
-import com.example.kotlin_repo.data.SiswaDao
+import com.example.roomsiswa.data.Siswa
+import com.example.roomsiswa.data.SiswaDao
 
 class OfflineRepositoriSiswa (private val siswaDao: SiswaDao) : RepositoriSiswa {
     override fun getAllSiswaStream() = siswaDao.getAllSiswa()

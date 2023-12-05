@@ -1,6 +1,6 @@
-package com.example.kotlin_repo.repositori
+package com.example.roomsiswa.repositori
 
-import com.example.kotlin_repo.data.Siswa
+import com.example.roomsiswa.data.Siswa
 import kotlinx.coroutines.flow.Flow
 
 interface RepositoriSiswa {

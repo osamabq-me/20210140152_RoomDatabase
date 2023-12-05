@@ -1,7 +1,7 @@
-package com.example.kotlin_repo.repositori
+package com.example.roomsiswa.repositori
 
 import android.content.Context
-import com.example.kotlin_repo.data.DatabaseSiswa
+import com.example.roomsiswa.data.DatabaseSiswa
 
 interface ContainerApp {
     val repositoriSiswa: RepositoriSiswa

@@ -1,11 +1,11 @@
-package com.example.kotlin_repo.model
+package com.example.roomsiswa.model
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.example.kotlin_repo.data.Siswa
-import com.example.kotlin_repo.repositori.RepositoriSiswa
+import com.example.roomsiswa.data.Siswa
+import com.example.roomsiswa.repositori.RepositoriSiswa
 
 class EntryViewModel(private val repositoriSiswa: RepositoriSiswa) : ViewModel() {
     var uiStateSiswa by mutableStateOf(UIStateSiswa())

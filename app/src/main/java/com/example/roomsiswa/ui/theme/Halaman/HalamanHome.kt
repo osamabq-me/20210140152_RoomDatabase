@@ -1,4 +1,4 @@
-package com.example.roomsiswa.ui.theme.Halaman
+package com.example.roomsiswa.ui.theme.halaman
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -32,8 +32,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.kotlin_repo.data.Siswa
 import com.example.roomsiswa.R
+import com.example.roomsiswa.data.Siswa
 import com.example.roomsiswa.model.HomeViewModel
 import com.example.roomsiswa.model.PenyediaViewModel
 import com.example.roomsiswa.navigasi.DestinasiNavigasi

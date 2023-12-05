@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Phone
@@ -39,6 +41,7 @@ import com.example.roomsiswa.R
 import com.example.roomsiswa.model.HomeViewModel
 import com.example.roomsiswa.model.PenyediaViewModel
 import com.example.roomsiswa.navigasi.DestinasiNavigasi
+import kotlinx.coroutines.launch
 
 object DestinasiEntry : DestinasiNavigasi {
     override val route = "item_entry"
@@ -55,7 +58,32 @@ fun EntrySiswaScreen(
 ) {
     val coroutineScope = rememberCoroutineScope()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
-
+    Scaffold(
+        modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
+        topBar = {
+            SiswaTopAppBar(
+                title = stringResource(DestinasiEntry.titleRes),
+                canNavigateBack = true,
+                scrollBehavior = scrollBehavior,
+                navigateUp = navigasiBack
+            )
+        }
+    ) { innerPadding ->
+        EntrySiswaBody(
+            uiStateSiswa = viewModel.uiStateSiswa,
+            onSiswaValueChange = viewModel::updateUiState,
+            onSaveClick = {
+                coroutineScope.launch {
+                    viewModel.saveSiswa()
+                    navigasiBack()
+                }
+            },
+            modifier = Modifier
+                .padding(innerPadding)
+                .verticalScroll(rememberScrollState())
+                .fillMaxWidth()
+        )
+    }
 }
 
 @Composable
@@ -88,8 +116,7 @@ fun ListSiswa(
     modifier: Modifier = Modifier
 ) {
     LazyColumn(modifier = Modifier) {
-        items(items = itemSiswa, key = { it.id }) {
-                person ->
+        items(items = itemSiswa, key = { it.id }) { person ->
             DataSiswa(
                 siswa = person,
                 modifier = Modifier

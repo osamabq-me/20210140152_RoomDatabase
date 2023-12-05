@@ -46,6 +46,17 @@ object DestinasiEntry : DestinasiNavigasi {
 
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun EntrySiswaScreen(
+    navigasiBack: () -> Unit,
+    modifier: Modifier = Modifier,
+    viewModel: EntryViewModel = viewModel(factory = PenyediaViewModel.Factory)
+) {
+    val coroutineScope = rememberCoroutineScope()
+    val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
+
+}
 
 @Composable
 fun BodyHome(

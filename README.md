@@ -1,6 +1,3 @@
-# OSAMAH ALMEKHLAFI - 20210140152 - Class: C 
-
- 
  First page:
 
 
